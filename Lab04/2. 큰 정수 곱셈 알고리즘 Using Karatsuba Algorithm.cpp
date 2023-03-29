@@ -13,7 +13,6 @@ int cnt = 0;
 void remove_leading_zeros(LargeInteger &v) {
 
     while (v.size() != 0 && v.back() == 0)
-
         v.pop_back();
 
 }
