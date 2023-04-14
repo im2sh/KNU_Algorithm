@@ -122,6 +122,7 @@ int main() {
     tromino(n, board, srow, scol, row, col);
     print_board(n, board);
 
+    
     return 0;
 }
 
