@@ -13,6 +13,7 @@ int fib(int n) {
         past = result % 1000;
         cout << result << "\n";
     }
+
     return result;
 }
 
