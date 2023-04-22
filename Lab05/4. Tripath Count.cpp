@@ -30,7 +30,7 @@ int main() {
 
     for (int i = N - 1; i > 0; i--) {
         for (int j = 0; j < i; j++) {
-            if (D[i][j] >= D[i][j + 1]) {
+            if (D[i][j] >= D[i][j + 1]) {            // >= 최대 경로  <= 최소 경로
                 D[i - 1][j] = a[i - 1][j] + D[i][j];
             } else {
                 D[i - 1][j] = a[i - 1][j] + D[i][j + 1];
@@ -40,13 +40,23 @@ int main() {
     cout << D[0][0] << "\n";
     cout << a[0][0] << " ";
     find_path(N, 0, 0);
+    cout << "\n\n";
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << D[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
 }
 
 void find_path(int n, int i, int j) {
 
-    if (D[i + 1][j] <= D[i + 1][j + 1]) {
+    if (D[i + 1][j] <= D[i + 1][j + 1]) {    // >= : 최소 경로 <= : 최대 경로
         cout << a[i + 1][j + 1] << " ";
         cnt++;
+
         if (cnt != (n - 1)) {
             find_path(n, i + 1, j + 1);
         }

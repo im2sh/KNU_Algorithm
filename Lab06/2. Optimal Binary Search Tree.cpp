@@ -30,6 +30,13 @@ void inorder(node_ptr np, vector<int> &inary) {
     }
 }
 
+void postorder(node_ptr np, vector<int> &postary) {
+    if (np) {
+        inorder(np->left, postary);
+        inorder(np->right, postary);
+        postary.push_back(np->key);
+    }
+}
 
 void search(node_ptr tree, int keyin, node_ptr &p) {
     bool found;
@@ -99,7 +106,7 @@ node_ptr tree(int i, int j, vector<int> &keys, matrix_t &R) {
 int main() {
     int n, temp;
     matrix_t A, R;
-    vector<int> k, p, inary, preary;
+    vector<int> k, p, inary, preary, postary;
     node_ptr root;
 
     cin >> n;
@@ -145,10 +152,13 @@ int main() {
     root = tree(1, n, k, R);
 
     // Opt
-    cout << A[1][n] << "\n";
+    cout << '\n';
+    cout << "퍙균탐색비용 " << A[1][n] << "\n\n";
     // Traverse Node
     preorder(root, preary);
     inorder(root, inary);
+    postorder(root, postary);
+    cout << "전위순회" << "\n";
     for (int i = 0; i < preary.size(); i++) {
         if (i == 0)
             cout << preary[i];
@@ -156,11 +166,20 @@ int main() {
             cout << " " << preary[i];
     }
     cout << "\n";
+    cout << "중위순회" << "\n";
     for (int i = 0; i < inary.size(); i++) {
         if (i == 0)
             cout << inary[i];
         else
             cout << " " << inary[i];
+    }
+    cout << "\n";
+    cout << "후위순회" << "\n";
+    for (int i = 0; i < postary.size(); i++) {
+        if (i == 0)
+            cout << postary[i];
+        else
+            cout << " " << postary[i];
     }
     cout << "\n";
 }

@@ -167,14 +167,14 @@ int main() {
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++) {
-            cin >> A[i][j];
-            //A[i][j] = 1;
+            //cin >> A[i][j];
+            A[i][j] = 1;
         }
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++) {
-            cin >> B[i][j];
-            //B[i][j] = 1;
+            //cin >> B[i][j];
+            B[i][j] = 1;
         }
 
     strassen(k, A, B, C);

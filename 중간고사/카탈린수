@@ -1,0 +1,8 @@
+import math
+
+def catalan(n):
+    return math.factorial(2*n) // (math.factorial(n) * math.factorial(n+1))
+
+print(catalan(30))
+
+http://sage.skku.edu

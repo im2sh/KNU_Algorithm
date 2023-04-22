@@ -13,6 +13,22 @@ struct List {
     vector<int> listv;
 };
 
+matrix_t W, D, P;
+vector<int> p;
+List list;
+int N, M;
+int i, j, weight;
+int u, v, n;
+
+void display() {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << D[i][j] << " ";
+        }
+        cout << "\n";
+    }
+}
+
 void floyd_m(int n, matrix_t &W, matrix_t &D, matrix_t &P) {
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++) {
@@ -39,12 +55,7 @@ void path(matrix_t &P, int u, int v, vector<int> &p) {
 }
 
 int main() {
-    matrix_t W, D, P;
-    vector<int> p;
-    List list;
-    int N, M;
-    int i, j, weight;
-    int u, v, n;
+
 
     cin >> N >> M;
 
@@ -110,4 +121,6 @@ int main() {
         }
 
     }
+
+
 }

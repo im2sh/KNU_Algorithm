@@ -11,8 +11,8 @@ vector<vector<int>> calcuM(vector<vector<int>> original, vector<vector<int>> tem
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             for (int k = 0; k < N; k++) {
-                result_temp[i][j] += ((original[i][k]) * (temp[k][j])) % 1000;
-                result_temp[i][j] %= 1000;
+                result_temp[i][j] += ((original[i][k]) * (temp[k][j])) % 10000;
+                result_temp[i][j] %= 10000;
             }
         }
     }

@@ -1,0 +1,15 @@
+순차탐색 : O(N)
+퀵 정렬 : 평균 nlogn 최악 n^2
+merge sort : nlogn
+chained matrix Multiple : 2^n
+이항계수 : nk
+
+플로이드 : n^3
+다익스트라 : n^2 https://ds-jungsoo.tistory.com/7
+프림 : n^2
+크루스칼 : mlogm
+
+sparse한 크래프는 크루스칼이 낫다
+dense한 그래프는 프림이 낫다
+
+마스터 정리 : https://velog.io/@tlsgn8483/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%A0%95%EB%A6%AC

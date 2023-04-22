@@ -6,10 +6,10 @@ int DP[1000][1000];
 
 int bin(int N, int K) {
     cnt++; // 함수 호출 횟수 카운트
-    if (K == 0 || N == K)
-        DP[N][K] = 1;
+    if (K == 1 || N == K)
+        DP[N][K] = 2;
     else if (DP[N][K] == 0)
-        DP[N][K] = (bin(N - 1, K) + bin(N - 1, K - 1)) % 10007; // memoize using recursive call
+        DP[N][K] = (bin(N - 1, K - 1) + bin(N - 1, K)) % 1000; // memoize using recursive call
 
     return DP[N][K]; // return memoized value
 }

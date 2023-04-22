@@ -8,9 +8,15 @@ int N;
 int cnt = 0;
 vector<int> arr;
 
+void display() {
+    for (int i = 1; i <= N; i++) {
+        cout << arr[i] << " ";
+    }
+}
+
 void partition(int low, int high, int &pivotpoint) {
     int i, j, pivotitem;
-
+    swap(arr[low], arr[high]);
     pivotitem = arr[low];
     j = low;
     for (i = low + 1; i <= high; i++) {
@@ -29,6 +35,8 @@ void quicksort(int low, int high) {
     int pivotpoint;
     if (low < high) {
         partition(low, high, pivotpoint);
+        display();
+        cout << "\n" << cnt << "\n";
         quicksort(low, pivotpoint - 1);
         quicksort(pivotpoint + 1, high);
     }
@@ -44,7 +52,7 @@ int main(void) {
     }
 
     quicksort(1, N);
-    for (int i = 0; i < N; i++) {
+    for (int i = 1; i <= N; i++) {
         if (i != N)
             cout << arr[i] << " ";
         else
